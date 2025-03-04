@@ -1,10 +1,15 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from 'react';
+import reactLogo from './assets/react.svg';
+import viteLogo from '/vite.svg';
+import './App.css';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
+  // const test = 123
+  // console.log('aaa')
+
+  const f = [1, 2, 3, 4, 5].filter((n) => n % 2 === 0);
+  console.log(f);
 
   return (
     <>
@@ -17,22 +22,20 @@ function App() {
         </a>
       </div>
       <h1>Vite + React</h1>
+      <button>test</button>
       <div className="card">
-        <button  onClick={() => setCount(0)}>Reset</button>
+        <button onClick={() => setCount(0)}>Reset</button>
         <button onClick={() => setCount((count) => count - 1)}>-</button>
         <span>{count}</span>
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
+        <button onClick={() => setCount((count) => count + 1)}>count is {count}</button>
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR
         </p>
       </div>
-      <p className="read-the-docs-">
-        Click on the Vite and React logos to learn 
-      </p>
+      <img src="" />
+      <p className="read-the-docs-">Click on the Vite and React logos to learn</p>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

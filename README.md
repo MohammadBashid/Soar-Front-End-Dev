@@ -38,17 +38,34 @@ You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-re
 import reactX from 'eslint-plugin-react-x'
 import reactDom from 'eslint-plugin-react-dom'
 
+import react from 'eslint-plugin-react'
+
 export default tseslint.config({
+  // Set the react version
+  settings: { react: { version: '18.3' } },
   plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
+    // Add the react plugin
+    react
   },
   rules: {
     // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
+    // Enable its recommended rules
+    ...react.configs.recommended.rules,
+    ...react.configs['jsx-runtime'].rules
+  }
 })
-```
+
+// export default tseslint.config({
+//   plugins: {
+//     // Add the react-x and react-dom plugins
+//     'react-x': reactX,
+//     'react-dom': reactDom,
+//   },
+//   rules: {
+//     // other rules...
+//     // Enable its recommended typescript rules
+//     ...reactX.configs['recommended-typescript'].rules,
+//     ...reactDom.configs.recommended.rules,
+//   },
+// })
+// ```
